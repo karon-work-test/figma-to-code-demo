@@ -1,0 +1,1109 @@
+/* ============================================================
+   Allevian — test 2 styles.css
+   Components & Tokens Edition
+   ============================================================ */
+
+
+/* ============================================================
+   1. Global Tokens — Primitives
+   ============================================================ */
+
+:root {
+
+  /* ── Color primitives ────────────────────────────────────── */
+  --clr-purple-500:  #7b55c8;
+  --clr-blue-900:    #1b2e6b;
+  --clr-grey-500:    #6b7490;
+  --clr-neutral-50:  #f4f5fa;
+  --clr-white:       #ffffff;
+
+  /* ── Color alpha variants ────────────────────────────────── */
+  --clr-blue-900-75: rgba(27, 46, 107, 0.75);
+  --clr-blue-900-12: rgba(27, 46, 107, 0.12);
+  --clr-purple-12:   rgba(123, 85, 200, 0.12);
+  --clr-white-75:    rgba(255, 255, 255, 0.75);
+  --clr-white-20:    rgba(255, 255, 255, 0.20);
+  --clr-white-15:    rgba(255, 255, 255, 0.15);
+  --clr-white-12:    rgba(255, 255, 255, 0.12);
+
+  /* ── Gradient primitives ─────────────────────────────────── */
+  --gradient-dark-bg:
+    linear-gradient(
+      154deg,
+      rgb(27,  46, 107)   0%,
+      rgb(28,  48, 109)  12.5%,
+      rgb(28,  49, 112)  25%,
+      rgb(29,  51, 114)  37.5%,
+      rgb(30,  53, 117)  50%,
+      rgb(32,  50, 116)  57.14%,
+      rgb(35,  47, 115)  64.29%,
+      rgb(37,  43, 114)  71.43%,
+      rgb(38,  40, 113)  78.57%,
+      rgb(40,  37, 112)  85.71%,
+      rgb(41,  33, 111)  92.86%,
+      rgb(42,  29, 110) 100%
+    );
+
+  --gradient-dark-bg-alt:
+    linear-gradient(
+      164deg,
+      rgb(27,  46, 107)   0%,
+      rgb(28,  48, 109)  12.5%,
+      rgb(28,  49, 112)  25%,
+      rgb(29,  51, 114)  37.5%,
+      rgb(30,  53, 117)  50%,
+      rgb(32,  50, 116)  57.14%,
+      rgb(35,  47, 115)  64.29%,
+      rgb(37,  43, 114)  71.43%,
+      rgb(38,  40, 113)  78.57%,
+      rgb(40,  37, 112)  85.71%,
+      rgb(41,  33, 111)  92.86%,
+      rgb(42,  29, 110) 100%
+    );
+
+  --gradient-text-accent:
+    linear-gradient(90deg, rgb(160, 127, 220) 0%, rgb(196, 181, 232) 100%);
+
+  /* ── Spacing primitives ──────────────────────────────────── */
+  --space-1:   1px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-12:  12px;
+  --space-14:  14px;
+  --space-16:  16px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-28:  28px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-42:  42px;
+  --space-48:  48px;
+  --space-64:  64px;
+  --space-72:  72px;
+  --space-80:  80px;
+  --space-112: 112px;
+
+  /* ── Radius primitives ───────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-full: 9999px;
+
+  /* ── Typography primitives ───────────────────────────────── */
+  --font-family-base: Arial, sans-serif;
+
+  --font-size-xs:  12px;
+  --font-size-sm:  14px;
+  --font-size-md:  16px;
+  --font-size-lg:  18px;
+  --font-size-xl:  24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  --font-weight-regular: 400;
+  --font-weight-bold:    700;
+
+  --line-height-xs:  17px;
+  --line-height-sm:  20px;
+  --line-height-md:  20px;
+  --line-height-lg:  27px;
+  --line-height-2xl: 37px;
+  --line-height-3xl: 53px;
+
+  --letter-spacing-wide: 1.2px;
+
+
+  /* ============================================================
+     2. Semantic Tokens — Mapped to Primitives
+     ============================================================ */
+
+  /* ── Colors: semantic roles ──────────────────────────────── */
+  --color-brand:           var(--clr-purple-500);
+  --color-foreground:      var(--clr-blue-900);
+  --color-foreground-75:   var(--clr-blue-900-75);
+  --color-foreground-12:   var(--clr-blue-900-12);
+  --color-brand-12:        var(--clr-purple-12);
+  --color-muted:           var(--clr-grey-500);
+  --color-surface-light:   var(--clr-neutral-50);
+  --color-surface-white:   var(--clr-white);
+
+  /* ── Typography: semantic roles ──────────────────────────── */
+  --text-label-size:    var(--font-size-xs);
+  --text-label-weight:  var(--font-weight-regular);
+  --text-label-lh:      var(--line-height-xs);
+
+  --text-body-size:     var(--font-size-md);
+  --text-body-weight:   var(--font-weight-regular);
+  --text-body-lh:       var(--line-height-md);
+
+  --text-body-lg-size:  var(--font-size-lg);
+  --text-body-lg-lh:    var(--line-height-lg);
+
+  --text-h2-size:       var(--font-size-2xl);
+  --text-h2-weight:     var(--font-weight-bold);
+  --text-h2-lh:         var(--line-height-2xl);
+
+  --text-h1-size:       var(--font-size-3xl);
+  --text-h1-weight:     var(--font-weight-bold);
+  --text-h1-lh:         var(--line-height-3xl);
+
+  /* ── Spacing: semantic roles ─────────────────────────────── */
+  --section-padding-x:  var(--space-112);
+  --section-padding-y:  var(--space-80);
+  --column-gap:         var(--space-48);
+
+  /* ── Component tokens: Badge ─────────────────────────────── */
+  --badge-padding-x:    var(--space-12);
+  --badge-padding-y:    var(--space-4);
+  --badge-gap:          var(--space-8);
+  --badge-radius:       var(--radius-full);
+  --badge-border:       1px solid var(--clr-white);
+  --badge-bg:           var(--clr-white-12);
+  --badge-dot-size:     6px;
+  --badge-dot-color:    var(--color-brand);
+  --badge-text-color:   var(--clr-white);
+
+  /* ── Component tokens: Button ────────────────────────────── */
+  --btn-padding-x:      var(--space-24);
+  --btn-padding-y:      var(--space-12);
+  --btn-gap:            var(--space-8);
+  --btn-radius:         var(--radius-sm);
+  --btn-font-size:      var(--font-size-md);
+  --btn-font-weight:    var(--font-weight-regular);
+  --btn-line-height:    var(--line-height-md);
+  --btn-icon-size:      24px;
+
+  /* ── Component tokens: Card ──────────────────────────────── */
+  --card-padding:       var(--space-24);
+  --card-gap:           var(--space-14);
+  --card-radius:        var(--radius-md);
+  --card-bg:            var(--color-surface-white);
+  --card-border:        1px solid var(--color-foreground-12);
+
+  /* ── Component tokens: Nav ───────────────────────────────── */
+  --nav-height:         var(--space-72);
+  --nav-padding-x:      var(--space-80);
+  --nav-padding-y:      var(--space-14);
+  --nav-link-padding-x: var(--space-16);
+  --nav-link-padding-y: var(--space-8);
+  --nav-link-radius:    var(--radius-sm);
+  --nav-border:         1px solid var(--color-brand-12);
+
+  /* ── Component tokens: Stat ──────────────────────────────── */
+  --stat-gap:           var(--space-4);
+  --stats-gap:          var(--space-40);
+
+  /* ── Component tokens: Feature List ─────────────────────── */
+  --feature-list-gap:   var(--space-8);
+  --feature-item-gap:   var(--space-8);
+
+  /* ── Component tokens: Footer ────────────────────────────── */
+  --footer-padding-x:   var(--space-112);
+  --footer-padding-y:   var(--space-48);
+  --footer-grid-gap:    var(--space-42);
+  --footer-col-gap:     var(--space-12);
+
+}
+
+
+/* ============================================================
+   3. Reset & Base
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-foreground);
+  background-color: var(--color-surface-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+figure {
+  margin: 0;
+}
+
+
+/* ============================================================
+   4. Focus States (Accessibility)
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+
+/* ============================================================
+   5. Component: Logo Box
+   ============================================================ */
+
+/* Fixed-size container prevents logos from stretching */
+.logo-box {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-box__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: none;
+  display: block;
+}
+
+/* Nav logos */
+.logo-box--nav-allevian {
+  width: 125px;
+  height: 44px;
+}
+
+.logo-box--nav-synova {
+  width: 127px;
+  height: 44px;
+}
+
+/* Footer logos */
+.logo-box--footer-allevian {
+  width: 136px;
+  height: 48px;
+}
+
+.logo-box--footer-synova {
+  width: 138px;
+  height: 48px;
+}
+
+
+/* ============================================================
+   5b. Component: Icon
+   ============================================================ */
+
+/*
+ * Icons use a two-level clipping structure matching Figma's output:
+ *   .icon           — 24×24 outer container, clips overflow
+ *   .icon__frame    — inner absolutely-positioned box (insets vary by icon)
+ *   .icon__frame img — fills the inner frame 100%
+ *
+ * This preserves the icon's intrinsic proportions inside the 24×24 cell.
+ */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.icon__frame {
+  position: absolute;
+}
+
+.icon__frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  max-width: none;
+}
+
+/* Arrow icon — Figma inset values make the arrow appear narrow & centred */
+.icon__frame--arrow {
+  inset: 27.73% 38.85% 27.75% 36.07%;
+}
+
+/* Flash (lightning) feature icon */
+.icon__frame--flash {
+  inset: 10.38% 19.29% 10.38% 19.28%;
+}
+
+/* Shield feature icon */
+.icon__frame--shield {
+  inset: 11.12% 18.75% 10.95% 18.75%;
+}
+
+/* Clock / check / small feature icons */
+.icon__frame--small {
+  inset: 10.42%;
+}
+
+
+/* ============================================================
+   6. Component: Badge
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--badge-gap);
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  border: var(--badge-border);
+  border-radius: var(--badge-radius);
+  background-color: var(--badge-bg);
+}
+
+.badge__dot {
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  border-radius: 50%;
+  background-color: var(--badge-dot-color);
+  flex-shrink: 0;
+}
+
+.badge__label {
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-lh);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--badge-text-color);
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   7. Component: Button
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--btn-gap);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-family-base);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  line-height: var(--btn-line-height);
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  flex-shrink: 0;
+  align-self: flex-start; /* prevent stretch inside column flex containers */
+  transition: opacity 0.15s ease;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn--primary {
+  background-color: var(--color-brand);
+  color: var(--clr-white);
+}
+
+.btn--ghost {
+  background-color: var(--clr-white-12);
+  color: var(--clr-white);
+  border: 1px solid var(--clr-white);
+}
+
+.btn--dark {
+  background-color: var(--color-foreground);
+  color: var(--clr-white);
+}
+
+.btn--outline-dark {
+  background-color: var(--clr-white);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-foreground);
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.btn-group--centered {
+  justify-content: center;
+}
+
+
+/* ============================================================
+   8. Component: Link Arrow
+   ============================================================ */
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--btn-gap);
+  font-family: var(--font-family-base);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-lh);
+  color: var(--color-brand);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   9. Component: Card
+   ============================================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+  padding: var(--card-padding);
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+}
+
+.card__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-md);
+  color: var(--color-foreground);
+}
+
+.card__body {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  color: var(--color-muted);
+}
+
+
+/* ============================================================
+   10. Component: Eyebrow / Section Label
+   ============================================================ */
+
+.eyebrow {
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-lh);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+
+/* ============================================================
+   11. Component: Heading (h2)
+   ============================================================ */
+
+.heading-2 {
+  font-size: var(--text-h2-size);
+  font-weight: var(--text-h2-weight);
+  line-height: var(--text-h2-lh);
+  color: var(--color-foreground);
+}
+
+
+/* ============================================================
+   12. Component: Body Copy
+   ============================================================ */
+
+.body-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.body-copy p {
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-lh);
+  color: var(--color-foreground-75);
+}
+
+.lead {
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-lh);
+  color: var(--color-foreground-75);
+}
+
+
+/* ============================================================
+   13. Component: Feature List
+   ============================================================ */
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--feature-list-gap);
+  width: 100%;
+}
+
+.feature-list__item {
+  display: flex;
+  gap: var(--feature-item-gap);
+  align-items: flex-start;
+}
+
+.feature-list__item span {
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-lh);
+  color: var(--color-foreground-75);
+}
+
+
+/* ============================================================
+   14. Component: Stat
+   ============================================================ */
+
+.stats {
+  display: flex;
+  gap: var(--stats-gap);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--stat-gap);
+  min-width: 0;
+}
+
+.stat__value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-lg);
+  color: var(--clr-white);
+}
+
+.stat__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--clr-white-75);
+}
+
+
+/* ============================================================
+   15. Layout: Section Base
+   ============================================================ */
+
+.section {
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  scroll-margin-top: var(--nav-height);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  width: 100%;
+}
+
+.section-header--centered {
+  align-items: center;
+  text-align: center;
+}
+
+.section--white {
+  background-color: var(--color-surface-white);
+}
+
+
+/* ============================================================
+   16. Layout: Split (two-column with image)
+   ============================================================ */
+
+.section--split {
+  display: flex;
+  gap: var(--column-gap);
+  align-items: stretch;
+}
+
+.split__media {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.split__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-24);
+}
+
+
+/* ============================================================
+   17. Layout: Card Grid (3-column)
+   ============================================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  width: 100%;
+}
+
+
+/* ============================================================
+   18. Navigation
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface-white);
+  border-bottom: var(--nav-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: var(--nav-padding-y) var(--nav-padding-x);
+}
+
+.nav__logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-20);
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
+  border-radius: var(--nav-link-radius);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-md);
+  color: var(--color-foreground);
+  transition: background-color 0.15s ease;
+}
+
+.nav__link--active {
+  background-color: var(--color-brand-12);
+  color: var(--color-brand);
+}
+
+.nav__link:not(.nav__link--active):hover {
+  background-color: var(--color-brand-12);
+}
+
+
+/* ============================================================
+   19. Section: Hero
+   ============================================================ */
+
+.section--hero {
+  display: flex;
+  gap: var(--column-gap);
+  align-items: stretch;
+  background-image: var(--gradient-dark-bg);
+}
+
+.hero__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-lh);
+}
+
+.hero__heading-line--white {
+  color: var(--clr-white);
+  white-space: nowrap;
+}
+
+.hero__heading-line--gradient {
+  background-image: var(--gradient-text-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.hero__body {
+  font-size: var(--text-body-lg-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-body-lg-lh);
+  color: var(--clr-white-75);
+}
+
+.hero__divider {
+  width: 100%;
+  flex-shrink: 0;
+  border-top: 1px solid var(--clr-white-20);
+}
+
+/* Hide the Figma image asset — the 1px CSS border above is used instead */
+.hero__divider img {
+  display: none;
+}
+
+.hero__media {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+
+/* ============================================================
+   20. Section: Benefits
+   ============================================================ */
+
+.section--benefits {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  background-color: var(--color-surface-light);
+}
+
+
+/* ============================================================
+   21. Section: Call to Action
+   ============================================================ */
+
+.section--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-48);
+  background-color: var(--color-brand);
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  text-align: center;
+  width: 100%;
+}
+
+.cta__heading {
+  font-size: var(--text-h2-size);
+  font-weight: var(--text-h2-weight);
+  line-height: var(--text-h2-lh);
+  color: var(--clr-white);
+  white-space: nowrap;
+}
+
+.cta__body {
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-lh);
+  color: var(--clr-white-75);
+}
+
+
+/* ============================================================
+   22. Footer
+   ============================================================ */
+
+.site-footer {
+  padding: var(--footer-padding-y) var(--footer-padding-x);
+  background-image: var(--gradient-dark-bg-alt);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--footer-grid-gap);
+}
+
+.footer__branding {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-col-gap);
+}
+
+.footer__tagline {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  color: var(--clr-white-75);
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-col-gap);
+}
+
+.footer__nav-heading,
+.footer__manufacturer-heading {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--clr-white-75);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-col-gap);
+}
+
+.footer__link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  color: var(--clr-white-75);
+  transition: color 0.15s ease;
+}
+
+.footer__link--active {
+  color: var(--clr-white);
+}
+
+.footer__link:hover {
+  color: var(--clr-white);
+}
+
+.footer__manufacturer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--footer-col-gap);
+}
+
+.footer__address {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  color: var(--clr-white-75);
+}
+
+.footer__divider {
+  margin: var(--footer-grid-gap) 0;
+  border-top: 1px solid var(--clr-white-15);
+}
+
+/* Hide the Figma image asset — the 1px CSS border above is used instead */
+.footer__divider img {
+  display: none;
+}
+
+.footer__disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+}
+
+.footer__disclaimer p {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-xs);
+  color: var(--clr-white-75);
+}
+
+.footer__disclaimer strong {
+  font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   23. Responsive — Tablet  (≤ 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding-x: var(--space-48);
+    --section-padding-y: var(--space-64);
+    --footer-padding-x:  var(--space-48);
+  }
+
+  .nav {
+    padding: var(--nav-padding-y) var(--space-48);
+  }
+
+  .hero__heading {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .hero__heading-line--white,
+  .hero__heading-line--gradient {
+    white-space: normal;
+  }
+
+  .cta__heading {
+    white-space: normal;
+  }
+}
+
+
+/* ============================================================
+   24. Responsive — Mobile  (≤ 768px)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-x: var(--space-20);
+    --section-padding-y: var(--space-48);
+    --column-gap:        var(--space-28);
+    --footer-padding-x:  var(--space-20);
+  }
+
+  .nav {
+    padding: var(--space-12) var(--space-20);
+    height: 60px;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  /* Hero stacks vertically */
+  .section--hero {
+    flex-direction: column;
+  }
+
+  .hero__media {
+    flex: none;
+    width: 100%;
+    min-height: 260px;
+  }
+
+  .hero__heading {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .hero__body {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+  }
+
+  .stats {
+    gap: var(--space-16);
+  }
+
+  /* Split sections stack vertically */
+  .section--split {
+    flex-direction: column;
+  }
+
+  .split__media {
+    flex: none;
+    width: 100%;
+    min-height: 240px;
+  }
+
+  .split__content {
+    justify-content: flex-start;
+  }
+
+  /* Benefits become single column */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA */
+  .cta__heading {
+    font-size: var(--font-size-xl);
+    line-height: 30px;
+    white-space: normal;
+  }
+
+  /* Footer single column */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-28);
+  }
+
+  .footer__divider {
+    margin: var(--space-32) 0;
+  }
+}
